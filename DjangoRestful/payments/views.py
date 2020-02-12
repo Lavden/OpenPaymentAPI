@@ -1,38 +1,24 @@
 from rest_framework import generics
-from rest_framework.views import APIView
-from payments.models import OpDtlRsrchPgyr2018P01172020
-from payments.serializers import RsrchSerializer
-from payments.permissions import CustomPermissionClass
-from django.http import HttpResponseForbidden
+from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly
 
-class PaymentList(generics.ListCreateAPIView):
-    queryset = OpDtlRsrchPgyr2018P01172020.objects.all()
-    serializer_class = RsrchSerializer
+from payments.models import UserProfile, Record
+from payments.serializers import UserProfileSerializer, RecordSerializer
+from payments.permissions import IsOwnerProfileOrReadOnly, IsAssociatedRecordOrReadOnly
 
-class PaymentDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = OpDtlRsrchPgyr2018P01172020.objects.all()
-    serializer_class = RsrchSerializer
+class UserProfileList(generics.ListCreateAPIView):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
 
-class EachPhysicianRecordList(generics.ListCreateAPIView):
-    permission_classes = [CustomPermissionClass, ]
-    serializer_class = RsrchSerializer
+class UserProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes=[IsOwnerProfileOrReadOnly]
 
-    def get_queryset(self):
-        username = self.kwargs['physicianid']
-        return OpDtlRsrchPgyr2018P01172020.objects.filter(physician_profile_id=username)
+class RecordList(generics.ListCreateAPIView):
+    queryset = Record.objects.all()
+    serializer_class = RecordSerializer
 
-class EachHospitalRecordList(generics.ListCreateAPIView):
-    permission_classes = [CustomPermissionClass, ]
-    serializer_class = RsrchSerializer
-
-    def get_queryset(self):
-        username = self.kwargs['hospitalid']
-        return OpDtlRsrchPgyr2018P01172020.objects.filter(teaching_hospital_id=username)
-
-class EachCompanyRecordList(generics.ListCreateAPIView):
-    permission_classes = [CustomPermissionClass, ]
-    serializer_class = RsrchSerializer
-
-    def get_queryset(self):
-        username = self.kwargs['companyid']
-        return OpDtlRsrchPgyr2018P01172020.objects.filter(applicable_manufacturer_or_applicable_gpo_making_payment_id=username)
+class RecordDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Record.objects.all()
+    serializer_class = RecordSerializer
+    permission_classes=[IsAssociatedRecordOrReadOnly]
