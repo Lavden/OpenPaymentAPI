@@ -35,7 +35,10 @@ OpenPayment
 
 ## Links
 [Presentation Slides](https://docs.google.com/presentation/d/1CIblp7mv2DxjX0ypKoIAFmMNTRQMO3svQVtcke1DneY/edit?usp=sharing)
-[Install Zappa] (https://www.agiliq.com/blog/2019/01/complete-serverless-django/)
-[QuickStart of Django-Rest_Framework] (https://blog.lawrencemcdaniel.com/serve-a-django-app-from-an-aws-lambda-function/)
-[Configure RDS with AWSLambda + Django] (https://www.codingforentrepreneurs.com/blog/rds-database-serverless-django-zappa-aws-lambda)
+
+[Install Zappa](https://www.agiliq.com/blog/2019/01/complete-serverless-django/)
+
+[QuickStart of Django-Rest_Framework](https://blog.lawrencemcdaniel.com/serve-a-django-app-from-an-aws-lambda-function/)
+
+[Configure RDS with AWSLambda + Django](https://www.codingforentrepreneurs.com/blog/rds-database-serverless-django-zappa-aws-lambda)
 
