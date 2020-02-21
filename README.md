@@ -5,7 +5,7 @@ Implemented a RESTful API to provide role-based access control for the database.
 ## Introduction
 
 ## Architecture
-![Image of architecture]()
+![Image of architecture](https://github.com/Lavden/OpenPaymentAPI/blob/master/img/architecture.jpg)
 
 - Django/ Django Rest Framework
 
