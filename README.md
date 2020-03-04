@@ -40,7 +40,12 @@ As a result, design the REST API based on permission policy can solve the above 
 
 ## Engineering challenges - Schema Design
 ![Image of schema](https://github.com/Lavden/OpenPaymentAPI/blob/master/img/schema.jpg)
-The OpenPayment Dataset is in .csv format and contains hundreds of in each file. The major columns I used to identify user class are type of users: company, hospital, physician. Each 
+
+The OpenPayment Dataset is in .csv format with hundreds of in each file. The major columns I used to identify user class are type of users: company, hospital, physician. Each row in the file contains infomration about financial relationships between the health care industry(companys), physicians, and teaching hospitals. 
+1. Figure out the relationships between health care industry and pyhsicians/ teaching hospitals. 
+  - One health care industry can pay to multiple physicians and teaching hospitals.
+  - One physician/ teaching hospital can receive sponsor from multiple health care industries.
+  - 
 ## Trade-offs: Lambda vs. Elastic Beanstalk
 
 ## Links
