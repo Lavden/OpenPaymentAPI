@@ -3,11 +3,18 @@
 Implemented a RESTful API to provide role-based access control for the database.
 
 ## Introduction
+Today there are no projects or applications that don't have a REST API for the creation of professional services based on their software. REST API provides interfaces for users to grant their access to data. However, how to manage who have rights to access which part of the data becomes more and more important as the data grows large and complicated. 
+
+As a result, design the REST API based on permission policy can solve the above problem. Permissions are used to grant or deny access for different classes of users to different parts of the API. Which means, the authenticated user can only access the data associted to his/her class, and has no permission to access other class of user's data. 
+
 
 ### Dataset
-OpenPayment
+[OpenPayment Dataset](https://www.cms.gov/OpenPayments/Explore-the-Data/Dataset-Downloads)
 
-### Architecture
+### Use Cases
+
+
+## Architecture
 ![Image of architecture](https://github.com/Lavden/OpenPaymentAPI/blob/master/img/architecture.jpg)
 
 - Django/ Django Rest Framework
@@ -15,8 +22,6 @@ OpenPayment
 - AWS API Gateway + AWS Lambda
 
 - Zappa
-
-## Get Start
 
 ## Usage
 
@@ -29,12 +34,15 @@ OpenPayment
 
 
 
-## Engineering challenges
+## Engineering challenges - Schema Design
+
 
 ## Trade-offs: Lambda vs. Elastic Beanstalk
 
 ## Links
 [Presentation Slides](https://docs.google.com/presentation/d/1CIblp7mv2DxjX0ypKoIAFmMNTRQMO3svQVtcke1DneY/edit?usp=sharing)
+
+[Demo]()
 
 [Install Zappa](https://www.agiliq.com/blog/2019/01/complete-serverless-django/)
 
