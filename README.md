@@ -12,6 +12,10 @@ As a result, design the REST API based on permission policy can solve the above 
 [OpenPayment Dataset](https://www.cms.gov/OpenPayments/Explore-the-Data/Dataset-Downloads)
 
 ### Use Cases
+- Payment records are associated with a company and a physician or hospital.
+- Only authenticated companies may create payment records.
+- Only the physician or hospital who is associated with the payment records may update or delete it.
+- Unauthenticated requests should have full read-only access.
 
 
 ## Architecture
@@ -35,8 +39,8 @@ As a result, design the REST API based on permission policy can solve the above 
 
 
 ## Engineering challenges - Schema Design
-
-
+![Image of schema](https://github.com/Lavden/OpenPaymentAPI/blob/master/img/schema.jpg)
+The OpenPayment Dataset is in .csv format and contains hundreds of in each file. The major columns I used to identify user class are type of users: company, hospital, physician. Each 
 ## Trade-offs: Lambda vs. Elastic Beanstalk
 
 ## Links
