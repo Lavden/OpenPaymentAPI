@@ -47,7 +47,7 @@ The OpenPayment Dataset is in .csv format with hundreds of in each file. The maj
  * One physician/ teaching hospital can receive sponsor from multiple health care industries.
   The health care indutry and physician/teaching hospital has many to many relationship. 
 2. Django Rest Framework already provide User model for the authenticated system. This can only used to identy user authentication (user name + password), without any permission check based on user class.
-## Trade-offs: Lambda vs. Elastic Beanstalk
+<!-- ## Trade-offs: Lambda vs. Elastic Beanstalk -->
 
 ## Links
 [Presentation Slides](https://docs.google.com/presentation/d/1CIblp7mv2DxjX0ypKoIAFmMNTRQMO3svQVtcke1DneY/edit?usp=sharing)
