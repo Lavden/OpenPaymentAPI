@@ -43,9 +43,10 @@ As a result, design the REST API based on permission policy can solve the above 
 
 The OpenPayment Dataset is in .csv format with hundreds of in each file. The major columns I used to identify user class are type of users: company, hospital, physician. Each row in the file contains infomration about financial relationships between the health care industry(companys), physicians, and teaching hospitals. 
 1. Figure out the relationships between health care industry and pyhsicians/ teaching hospitals. 
-  - One health care industry can pay to multiple physicians and teaching hospitals.
-  - One physician/ teaching hospital can receive sponsor from multiple health care industries.
-  - 
+ * One health care industry can pay to multiple physicians and teaching hospitals.
+ * One physician/ teaching hospital can receive sponsor from multiple health care industries.
+  The health care indutry and physician/teaching hospital has many to many relationship. 
+2. Django Rest Framework already provide User model for the authenticated system. This can only used to identy user authentication (user name + password), without any permission check based on user class.
 ## Trade-offs: Lambda vs. Elastic Beanstalk
 
 ## Links
